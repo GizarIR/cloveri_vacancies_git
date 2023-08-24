@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "cloveri_vacancies"
+version = "1.0.8-beta"
+description = "Cloveri Vacancies API"
+authors = ["admin <admin@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.73.0"
+SQLAlchemy = {extras = ["asyncio"], version = "^1.4.29"}
+uvicorn = "^0.16.0"
+python-dotenv = "^0.19.2"
+requests = "^2.27.1"
+pydantic = {extras = ["email"], version = "^1.9.0"}
+alembic = "^1.7.5"
+python-multipart = "^0.0.5"
+asyncpg = "^0.25.0"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^22.3.0", allow-prereleases = true}
+autoflake = "^1.4"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+coverage = "^6.2"
+pytest = "^6.2.5"
+pytest-asyncio = "^0.16.0"
+httpx = "^0.21.3"
+sqlalchemy2-stubs = "^0.0.2-alpha.19"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-v"
+testpaths = [
+    "app/tests",
+]
+
+[tool.isort]
+profile = "black"
